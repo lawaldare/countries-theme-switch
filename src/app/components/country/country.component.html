@@ -1,0 +1,12 @@
+<div class="card shadow" (click)="getCountryDetails(country.name)" [ngClass]="{'dark-mode': this.countryService.mode }">
+  <img [src]="country.flag" alt="" class="flag">
+  <div class="list-content">
+    <p class="country-name">{{country.name}}</p>
+    <div class="sub-content">
+      <p><span class="bold-header">Poulation:</span> <span class="bold-header-value"> {{country.population}} </span></p>
+      <p><span class="bold-header">Region:</span><span class="bold-header-value"> {{country.region}} </span></p>
+      <p><span class="bold-header">Capital:</span> <span class="bold-header-value"> {{country.capital}} </span></p>
+    </div>
+  </div>
+
+</div>

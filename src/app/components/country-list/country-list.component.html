@@ -1,0 +1,26 @@
+<div class="forms" [ngClass]="{'dark-mode': this.countryService.mode }">
+  <div class="input-container shadow">
+    <i class="fas fa-search"></i>
+    <input type="text" class="input-box" (input)="getAllSearchedCountries($event)" placeholder="Search for a country..."
+      [ngClass]="{'dark-mode': this.countryService.mode }">
+  </div>
+  <div class="region-container shadow">
+    <select class="region-input-box" (change)="getAllSearchedCountriesByRegion($event)"
+      [ngClass]="{'dark-mode': this.countryService.mode }">
+      <option selected disabled>Filter By Region</option>
+      <option value="all">All</option>
+      <option value="Asia">Asia</option>
+      <option value="Africa">Africa</option>
+      <option value="Europe">Europe</option>
+      <option value="Oceania">Oceania</option>
+      <option value="Americas">Americas</option>
+      <option value="Polar">Polar</option>
+    </select>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</div>
+
+
+<div class="country-countainer mt-5" [ngClass]="{'dark-mode': this.countryService.mode }">
+  <app-country *ngFor="let country of countries" [country]="country"></app-country>
+</div>

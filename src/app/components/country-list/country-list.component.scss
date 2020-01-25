@@ -1,0 +1,83 @@
+.country-countainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-row-gap: 50px;
+  cursor: pointer;
+
+}
+
+
+.input-box {
+  border: none;
+  padding: 10px;
+}
+
+.input-box:focus {
+  outline: none;
+}
+
+.input-container {
+  margin-top: 50px;
+  display: flex;
+  width: 500px;
+  height: 60px;
+  align-items: center;
+  border-radius: 5px;
+
+}
+
+.region-container {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  width: 200px;
+  height: 60px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.fa-search {
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.forms {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+
+.fa-chevron-down {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.region-input-box {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-left: 10px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@media only screen and (max-width:995px){
+  .forms {
+    flex-wrap: wrap;
+  }
+}

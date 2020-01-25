@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1440px !important;
+  }
+}
+
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.dark-mode {
+  background-color: hsl(207, 26%, 17%);
+  color: white;
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: white;
+  }
+}
+
+.light-mode {
+  background-color: white;
+}
