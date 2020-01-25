@@ -1,5 +1,6 @@
 <div class="c">
-  <button class="back-button " (click)="goBackToHomepage()"> &larr; Button</button>
+  <button class="back-button " (click)="goBackToHomepage()" [ngClass]="{'dark-mode': this.countryService.mode }"> &larr;
+    Button</button>
 
   <div class="detail-container">
     <img [src]="country.flag" alt="" class="detail-image">

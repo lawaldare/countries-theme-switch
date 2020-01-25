@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'countries';
 
-  constructor(private countryService: CountryService) { }
+  constructor(public countryService: CountryService) { }
 }

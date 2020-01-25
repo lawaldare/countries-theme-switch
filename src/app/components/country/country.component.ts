@@ -12,7 +12,7 @@ export class CountryComponent implements OnInit {
 
   @Input() country: Country;
 
-  constructor(private router: Router, private countryService: CountryService) { }
+  constructor(private router: Router, public countryService: CountryService) { }
 
   ngOnInit() {
   }

@@ -52,3 +52,31 @@ box-shadow: 0 0 5px 3px #ccc;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+@media only screen and (max-width: 425px){
+  .detail-image {
+    width: 300px;
+    height: 250px;
+    margin-right: 130px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+  }
+
+  .detail-container {
+    flex-direction: column;
+  }
+
+  .details {
+    line-height: 1.2;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .detail-content {
+    // text-align: center;
+    width: 100%;
+  }
+
+
+}

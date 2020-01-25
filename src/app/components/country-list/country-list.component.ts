@@ -12,7 +12,7 @@ export class CountryListComponent implements OnInit {
   countries: Country[];
 
 
-  constructor(private countryService: CountryService) {
+  constructor(public countryService: CountryService) {
   }
 
   ngOnInit() {

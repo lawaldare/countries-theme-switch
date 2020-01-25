@@ -14,7 +14,7 @@ export class CountryDetailsComponent implements OnInit {
   borderCountries: string[];
   countryName: string;
   country: any;
-  constructor(private route: ActivatedRoute, private countryService: CountryService, private router: Router) { }
+  constructor(private route: ActivatedRoute, public countryService: CountryService, private router: Router) { }
 
   ngOnInit() {
     this.getCountryName();
