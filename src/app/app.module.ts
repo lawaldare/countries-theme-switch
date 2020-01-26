@@ -10,6 +10,8 @@ import { CountryListComponent } from './components/country-list/country-list.com
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
 import { CountryComponent } from './components/country/country.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

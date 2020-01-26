@@ -1,0 +1,72 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,800&amp;display=swap",
+          "https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "countries",
+      "urls": [
+        "https://restcountries.eu/rest/v2/all"
+      ],
+      "cacheConfig": {
+        "maxSize": 5,
+        "maxAge": "1d",
+        "timeout": "30s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "name",
+      "urls": [
+        "https://restcountries.eu/rest/v2/name/*"
+      ],
+      "cacheConfig": {
+        "maxSize": 10,
+        "maxAge": "1d",
+        "timeout": "30s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "countries",
+      "urls": [
+        "https://restcountries.eu/rest/v2/region/*"
+      ],
+      "cacheConfig": {
+        "maxSize": 10,
+        "maxAge": "1d",
+        "timeout": "30s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}
