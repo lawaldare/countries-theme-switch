@@ -36,7 +36,6 @@ export class CountryListComponent implements OnInit {
       this.getAllCountries();
     }
     this.countryService.getSearchedCountriesByRegion(event.target.value).subscribe(data => {
-      debugger;
       this.countries = data;
     })
   }

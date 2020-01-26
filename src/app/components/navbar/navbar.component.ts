@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
 
   changeMode() {
     this.countryService.mode = !this.countryService.mode;
+    localStorage.setItem('mode', String(this.countryService.mode));
   }
 
   goToHomepage() {

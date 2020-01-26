@@ -5,6 +5,11 @@
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
+  // transition: all .2s !important;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.1);
+  }
 }
 
 .flag {

@@ -1,4 +1,5 @@
-<div class="card shadow" (click)="getCountryDetails(country.name)" [ngClass]="{'dark-mode': this.countryService.mode }">
+<div class="card shadow" (click)="getCountryDetails(country.name)" [ngClass]="{'dark-mode': this.countryService.mode }"
+  data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-sine">
   <img [src]="country.flag" alt="" class="flag">
   <div class="list-content">
     <p class="country-name">{{country.name}}</p>

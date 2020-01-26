@@ -1,5 +1,5 @@
 import { Country } from './../model/country.model';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -10,9 +10,18 @@ export class CountryService {
 
   BASE_URL: string = 'https://restcountries.eu/rest/v2/';
 
-  constructor(private http: HttpClient) { }
-
   mode: boolean = false;
+
+
+  constructor(private http: HttpClient) {
+    if (localStorage.getItem('mode')) {
+      this.mode = !!localStorage.getItem('mode');
+      return;
+    }
+    // this.mode = false;
+  }
+
+
 
 
 
