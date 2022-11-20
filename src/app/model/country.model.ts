@@ -10,7 +10,10 @@ export interface Country {
   capital: string;
   currencies: any[];
   languages: any[];
-  flags: string;
+  flags: {
+    svg: string;
+    png: string;
+  };
   borders: string[];
   topLevelDomain: string[];
   alpha3Code: string;
