@@ -1,24 +1,22 @@
 import { Country } from './../model/country.model';
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
 
-  BASE_URL: string = 'https://restcountries.eu/rest/v2/';
+  BASE_URL: string = 'https://restcountries.com/v3.1/';
 
-  mode: boolean = false;
+  isDark: boolean = false;
 
 
   constructor(private http: HttpClient) {
-    if (localStorage.getItem('mode')) {
-      this.mode = !!localStorage.getItem('mode');
-      return;
+    if (localStorage['isDark']) {
+      this.isDark = JSON.parse(localStorage.getItem('isDark'));
     }
-    // this.mode = false;
   }
 
 

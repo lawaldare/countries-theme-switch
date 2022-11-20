@@ -7,37 +7,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.scss']
 })
-export class CountryListComponent implements OnInit {
+export class CountryListComponent {
 
-  countries: Country[];
+  countries$ = this.countryService.getCountries();
 
 
   constructor(public countryService: CountryService) {
   }
 
-  ngOnInit() {
-    this.getAllCountries();
-  }
-
-  getAllCountries(): void {
-    this.countryService.getCountries().subscribe(data => {
-      this.countries = data;
-    })
-  }
-
   getAllSearchedCountries(event): void {
-    this.countryService.getSearchedCountries(event.target.value).subscribe(data => {
-      this.countries = data;
-    })
+    this.countries$ = this.countryService.getSearchedCountries(event.target.value);
   }
 
   getAllSearchedCountriesByRegion(event): void {
     if (event.target.value === 'all') {
-      this.getAllCountries();
+      this.countries$ = this.countryService.getCountries();
+      return;
     }
-    this.countryService.getSearchedCountriesByRegion(event.target.value).subscribe(data => {
-      this.countries = data;
-    })
+    this.countries$ = this.countryService.getSearchedCountriesByRegion(event.target.value);
   }
 
 }

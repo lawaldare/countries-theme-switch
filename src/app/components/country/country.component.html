@@ -1,8 +1,8 @@
-<div class="card shadow" (click)="getCountryDetails(country.name)" [ngClass]="{'dark-mode': this.countryService.mode }"
+<div class="card shadow" (click)="getCountryDetails(country.name.common)" [ngClass]="{'dark-mode': this.countryService.mode }"
   data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-sine">
-  <img [src]="country.flag" alt="" class="flag">
+  <img [src]="country.flags.svg" alt="" class="flag">
   <div class="list-content">
-    <p class="country-name">{{country.name}}</p>
+    <p class="country-name">{{country.name.common}}</p>
     <div class="sub-content">
       <p><span class="bold-header">Poulation:</span> <span class="bold-header-value"> {{country.population}} </span></p>
       <p><span class="bold-header">Region:</span><span class="bold-header-value"> {{country.region}} </span></p>

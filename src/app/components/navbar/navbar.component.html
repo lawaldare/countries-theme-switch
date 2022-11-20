@@ -1,8 +1,8 @@
-<nav class="navbar" [ngClass]="{'dark-mode': this.countryService.mode }">
+<nav class="navbar" [ngClass]="{'dark-mode': this.countryService.isDark }">
   <div class="container">
     <a class="navbar-brand mode" (click)="goToHomepage()">Where in the world?</a>
-    <p class="mode mt-3" (click)="changeMode()"><i class="fas fa-moon" *ngIf="this.countryService.mode"></i> <i
-        class="far fa-moon" *ngIf="!this.countryService.mode"></i>&nbsp; Dark
+    <p class="mode mt-3" (click)="changeMode()"><i class="fas fa-moon" *ngIf="this.countryService.isDark"></i> <i
+        class="far fa-moon" *ngIf="!this.countryService.isDark"></i>&nbsp; Dark
       Mode</p>
   </div>
 </nav>

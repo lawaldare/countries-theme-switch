@@ -15,8 +15,8 @@ export class NavbarComponent implements OnInit {
   }
 
   changeMode() {
-    this.countryService.mode = !this.countryService.mode;
-    localStorage.setItem('mode', String(this.countryService.mode));
+    this.countryService.isDark = !this.countryService.isDark;
+    localStorage.setItem('isDark', String(this.countryService.isDark));
   }
 
   goToHomepage() {

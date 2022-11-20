@@ -12,6 +12,8 @@ import { CountryComponent } from './components/country/country.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { LangPipe } from './lang.pipe';
+import { CurrPipe } from './curr.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { environment } from '../environments/environment';
     CountryDetailsComponent,
     CountryComponent,
     NavbarComponent,
+    LangPipe,
+    CurrPipe,
   ],
   imports: [
     BrowserModule,

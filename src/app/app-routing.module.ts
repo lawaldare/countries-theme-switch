@@ -5,9 +5,9 @@ import { CountryDetailsComponent } from './components/country-details/country-de
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'countries' },
   { path: 'countries', component: CountryListComponent },
   { path: 'country/:name', component: CountryDetailsComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'countries' },
 ];
 
 @NgModule({

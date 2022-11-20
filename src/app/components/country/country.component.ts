@@ -8,14 +8,11 @@ import { Router } from '@angular/router';
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss']
 })
-export class CountryComponent implements OnInit {
+export class CountryComponent {
 
   @Input() country: Country;
 
   constructor(private router: Router, public countryService: CountryService) { }
-
-  ngOnInit() {
-  }
 
   getCountryDetails(name) {
     this.router.navigate(['country', name])

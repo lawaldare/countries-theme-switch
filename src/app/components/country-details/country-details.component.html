@@ -3,35 +3,29 @@
     Button</button>
 
   <div class="detail-container">
-    <img [src]="country.flag" alt="" class="detail-image">
+    <img [src]="country.flags.svg" alt="" class="detail-image">
     <div class="detail-content">
 
-      <h1 class="country-name">{{country.name}}</h1>
+      <h1 class="country-name">{{country.name.common}}</h1>
       <div class="details">
-        <p><span class="bold-header">Native Name:</span> <span class="bold-header-value"> {{country.nativeName}} </span>
+        <p><span class="bold-header">Official Name:</span> <span class="bold-header-value"> {{country.name.official}} </span>
         </p>
         <p><span class="bold-header">Population:</span><span class="bold-header-value"> {{country.population}} </span>
         </p>
         <p><span class="bold-header">Region:</span> <span class="bold-header-value"> {{country.region}} </span></p>
         <p><span class="bold-header">Sub region:</span> <span class="bold-header-value"> {{country.subregion}} </span>
         </p>
-        <p><span class="bold-header">Capital:</span><span class="bold-header-value"> {{country.capital}} </span></p>
-        <p><span class="bold-header">Top Level Domain:</span> <span class="bold-header-value">
-            {{country.topLevelDomain[0]}} </span>
+        <p><span class="bold-header">Capital:</span><span class="bold-header-value"> {{country.capital[0]}} </span></p>
+        <p><span class="bold-header">Time Zone:</span> <span class="bold-header-value">
+            {{country.timezones[0]}} </span>
         </p>
-        <p><span class="bold-header">Currencies:</span> <span class="bold-header-value"> {{country.currencies[0].name}}
+        <p><span class="bold-header">Currencies:</span> <span class="bold-header-value"> {{country.currencies | curr}}
           </span>
         </p>
         <p class="d-flex"><span class="bold-header">Languages:&nbsp; </span> <span class="bold-header-value"
-            *ngFor="let lang of country.languages"> {{lang.name}},&nbsp;
+            *ngFor="let lang of country.languages | lang"> {{lang}},&nbsp;
           </span></p>
       </div>
-      <!-- <div class="border">
-      <p class="d-flex"><span class="bold-header">Border Countries:&nbsp; </span> <span class="bold-header-value"
-          *ngFor="let c of getBorderCountries(country)"> {{c}},&nbsp;
-        </span></p>
-    </div> -->
-
     </div>
   </div>
 
