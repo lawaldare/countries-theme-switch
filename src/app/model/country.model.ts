@@ -1,5 +1,8 @@
 export interface Country {
-  name: string;
+  name: {
+    common:string;
+    official:string;
+  };
   nativeName: string;
   population: number;
   region: string;
@@ -7,7 +10,7 @@ export interface Country {
   capital: string;
   currencies: any[];
   languages: any[];
-  flag: string;
+  flags: string;
   borders: string[];
   topLevelDomain: string[];
   alpha3Code: string;
