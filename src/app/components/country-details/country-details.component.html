@@ -1,32 +1,41 @@
 <div class="c">
-  <button class="back-button " (click)="goBackToHomepage()" [ngClass]="{'dark-mode': this.countryService.isDark }"> &larr;
+  <button class="back-button " (click)="goBackToHomepage()" [ngClass]="{'dark-mode': this.countryService.isDark }">
+    &larr;
     Button</button>
 
-  <div class="detail-container">
-    <img [src]="country.flags.svg" alt="" class="detail-image">
-    <div class="detail-content">
+  <ng-container *ngIf="country$ | async as country; else loadingTemplate">
+    <div class="detail-container">
+      <img [src]="country.flags.svg" alt="" class="detail-image">
+      <div class="detail-content">
 
-      <h1 class="country-name">{{country.name.common}}</h1>
-      <div class="details">
-        <p><span class="bold-header">Official Name:</span> <span class="bold-header-value"> {{country.name.official}} </span>
-        </p>
-        <p><span class="bold-header">Population:</span><span class="bold-header-value"> {{country.population}} </span>
-        </p>
-        <p><span class="bold-header">Region:</span> <span class="bold-header-value"> {{country.region}} </span></p>
-        <p><span class="bold-header">Sub region:</span> <span class="bold-header-value"> {{country.subregion}} </span>
-        </p>
-        <p><span class="bold-header">Capital:</span><span class="bold-header-value"> {{country.capital[0]}} </span></p>
-        <p><span class="bold-header">Time Zone:</span> <span class="bold-header-value">
-            {{country.timezones[0]}} </span>
-        </p>
-        <p><span class="bold-header">Currencies:</span> <span class="bold-header-value"> {{country.currencies | curr}}
-          </span>
-        </p>
-        <p class="d-flex"><span class="bold-header">Languages:&nbsp; </span> <span class="bold-header-value"
-            *ngFor="let lang of country.languages | lang"> {{lang}},&nbsp;
-          </span></p>
+        <h1 class="country-name">{{country.name.common}}</h1>
+        <div class="details">
+          <p><span class="bold-header">Official Name:</span> <span class="bold-header-value"> {{country.name.official}}
+            </span>
+          </p>
+          <p><span class="bold-header">Population:</span><span class="bold-header-value"> {{country.population}} </span>
+          </p>
+          <p><span class="bold-header">Region:</span> <span class="bold-header-value"> {{country.region}} </span></p>
+          <p><span class="bold-header">Sub region:</span> <span class="bold-header-value"> {{country.subregion}} </span>
+          </p>
+          <p><span class="bold-header">Capital:</span><span class="bold-header-value"> {{country.capital[0]}} </span>
+          </p>
+          <p><span class="bold-header">Time Zone:</span> <span class="bold-header-value">
+              {{country.timezones[0]}} </span>
+          </p>
+          <p><span class="bold-header">Currencies:</span> <span class="bold-header-value"> {{country.currencies | curr}}
+            </span>
+          </p>
+          <p class="d-flex"><span class="bold-header">Languages:&nbsp; </span> <span class="bold-header-value"
+              *ngFor="let lang of country.languages | lang"> {{lang}},&nbsp;
+            </span></p>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
+  <ng-template #loadingTemplate>
+    loading...!
+  </ng-template>
+
 
 </div>

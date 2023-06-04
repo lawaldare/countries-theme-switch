@@ -1,12 +1,11 @@
-import { Country } from "./../../model/country.model";
-import { CountryService } from "./../../services/country.service";
-import { Component, OnInit } from "@angular/core";
-import { map } from "rxjs/operators";
+import { CountryService } from './../../services/country.service';
+import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Component({
-  selector: "app-country-list",
-  templateUrl: "./country-list.component.html",
-  styleUrls: ["./country-list.component.scss"],
+  selector: 'app-country-list',
+  templateUrl: './country-list.component.html',
+  styleUrls: ['./country-list.component.scss'],
 })
 export class CountryListComponent {
   countries$ = this.countryService.getCountries().pipe(
@@ -32,7 +31,7 @@ export class CountryListComponent {
   }
 
   getAllSearchedCountriesByRegion(event): void {
-    if (event.target.value === "all") {
+    if (event.target.value === 'all') {
       this.countries$ = this.countryService.getCountries();
       return;
     }

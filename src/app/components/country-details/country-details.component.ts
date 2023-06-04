@@ -1,39 +1,30 @@
+import { Observable } from 'rxjs';
 import { Country } from './../../model/country.model';
 import { CountryService } from './../../services/country.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-country-details',
   templateUrl: './country-details.component.html',
-  styleUrls: ['./country-details.component.scss']
+  styleUrls: ['./country-details.component.scss'],
 })
-export class CountryDetailsComponent implements OnInit {
-
-  countryName: string;
-  country: any;
-  constructor(private route: ActivatedRoute, public countryService: CountryService, private router: Router) { }
-
-  ngOnInit() {
-    this.getCountryName();
-  }
-
-
-  getCountryName() {
-    this.route.paramMap.subscribe(routeData => {
-      this.countryName = routeData.get('name');
-      this.getCountryByName(this.countryName)
-    });
-  }
-
-  getCountryByName(name: string): void {
-    this.countryService.getSearchedCountries(name).subscribe(data => {
-      this.country = data[0];
-    })
-  }
+export class CountryDetailsComponent {
+  country$: Observable<Country> = this.route.paramMap.pipe(
+    mergeMap((routeData) => {
+      const countryName = routeData.get('name');
+      return this.countryService.getSearchedCountries(countryName);
+    }),
+    map((data) => data[0])
+  );
+  constructor(
+    private route: ActivatedRoute,
+    public countryService: CountryService,
+    private router: Router
+  ) {}
 
   goBackToHomepage() {
     this.router.navigate(['countries']);
   }
-
 }
