@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'curr'
+    name: 'curr',
+    standalone: true
 })
 export class CurrPipe implements PipeTransform {
 

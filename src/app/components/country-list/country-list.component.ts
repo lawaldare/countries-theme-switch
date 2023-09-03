@@ -2,11 +2,22 @@ import { CountryService } from './../../services/country.service';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Country } from 'src/app/model/country.model';
+import { CountryComponent } from '../country/country.component';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-country-list',
-  templateUrl: './country-list.component.html',
-  styleUrls: ['./country-list.component.scss'],
+    selector: 'app-country-list',
+    templateUrl: './country-list.component.html',
+    styleUrls: ['./country-list.component.scss'],
+    standalone: true,
+    imports: [
+        NgClass,
+        FormsModule,
+        NgFor,
+        CountryComponent,
+        AsyncPipe,
+    ],
 })
 export class CountryListComponent {
   countries$ = this.countryService.getCountries().pipe(

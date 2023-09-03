@@ -15,25 +15,23 @@ import { LangPipe } from './lang.pipe';
 import { CurrPipe } from './curr.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CountryListComponent,
-    CountryDetailsComponent,
-    CountryComponent,
-    NavbarComponent,
-    LangPipe,
-    CurrPipe,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-    }),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+        }),
+        CountryListComponent,
+        CountryDetailsComponent,
+        CountryComponent,
+        NavbarComponent,
+        LangPipe,
+        CurrPipe,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}
