@@ -18,12 +18,10 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/countries"
+              "base": "dist/countries/browser"
             },
             "index": "src/index.html",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -37,9 +35,7 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "./node_modules/aos/dist/aos.js"
-            ],
+            "scripts": ["./node_modules/aos/dist/aos.js"],
             "browser": "src/main.ts"
           },
           "configurations": {
@@ -101,9 +97,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -115,9 +109,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
