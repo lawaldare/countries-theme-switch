@@ -13,13 +13,14 @@
 }
 
 * {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .dark-mode {
   background-color: hsl(207, 26%, 17%) !important;
   color: white;
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
     color: white;
   }
 

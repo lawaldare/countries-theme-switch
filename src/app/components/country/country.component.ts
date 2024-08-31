@@ -1,24 +1,22 @@
-import { CountryService } from './../../services/country.service';
-import { Country } from './../../model/country.model';
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgClass } from '@angular/common';
+import { CountryService } from "./../../services/country.service";
+import { Country } from "./../../model/country.model";
+import { Component, input, inject } from "@angular/core";
+import { Router } from "@angular/router";
+import { NgClass } from "@angular/common";
 
 @Component({
-    selector: 'app-country',
-    templateUrl: './country.component.html',
-    styleUrls: ['./country.component.scss'],
-    standalone: true,
-    imports: [NgClass]
+  selector: "app-country",
+  templateUrl: "./country.component.html",
+  styleUrls: ["./country.component.scss"],
+  standalone: true,
+  imports: [NgClass],
 })
 export class CountryComponent {
+  public readonly country = input.required<Country>();
+  private readonly router = inject(Router);
+  public readonly countryService = inject(CountryService);
 
-  @Input() country: Country;
-
-  constructor(private router: Router, public countryService: CountryService) { }
-
-  getCountryDetails(name) {
-    this.router.navigate(['country', name])
+  public getCountryDetails(name): void {
+    this.router.navigate(["country", name]);
   }
-
 }

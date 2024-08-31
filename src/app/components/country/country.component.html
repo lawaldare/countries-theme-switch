@@ -1,13 +1,27 @@
-<div class="card shadow" (click)="getCountryDetails(country.name.common)" [ngClass]="{'dark-mode': this.countryService.isDark }"
-  data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-sine">
-  <img [src]="country.flags.svg" alt="" class="flag">
+<div
+  class="card shadow"
+  (click)="getCountryDetails(country().name.common)"
+  [ngClass]="{ 'dark-mode': this.countryService.isDark() }"
+  data-aos="fade-up"
+  data-aos-duration="500"
+  data-aos-easing="ease-in-sine"
+>
+  <img [src]="country().flags.svg" alt="" class="flag" />
   <div class="list-content">
-    <p class="country-name">{{country.name.common}}</p>
+    <p class="country-name">{{ country().name.common }}</p>
     <div class="sub-content">
-      <p><span class="bold-header">Poulation:</span> <span class="bold-header-value"> {{country.population}} </span></p>
-      <p><span class="bold-header">Region:</span><span class="bold-header-value"> {{country.region}} </span></p>
-      <p><span class="bold-header">Capital:</span> <span class="bold-header-value"> {{country.capital}} </span></p>
+      <p>
+        <span class="bold-header">Poulation:</span>
+        <span class="bold-header-value"> {{ country().population }} </span>
+      </p>
+      <p>
+        <span class="bold-header">Region:</span
+        ><span class="bold-header-value"> {{ country().region }} </span>
+      </p>
+      <p>
+        <span class="bold-header">Capital:</span>
+        <span class="bold-header-value"> {{ country().capital }} </span>
+      </p>
     </div>
   </div>
-
 </div>
