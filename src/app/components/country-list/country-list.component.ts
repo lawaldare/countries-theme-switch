@@ -23,7 +23,6 @@ export class CountryListComponent {
 
   protected countries$ = this.countryService.getCountries().pipe(
     map((countries) => {
-      console.log(countries[0]);
       return this.sortCountries(countries);
     }),
   );

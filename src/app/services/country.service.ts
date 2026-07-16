@@ -39,14 +39,22 @@ export class CountryService {
   }
 
   getSearchedCountries(searchTerm: string): Observable<Country[]> {
-    return this.http.get(`${this.BASE_URL}?q=${searchTerm}`, {
-      headers: this.headers,
-    }) as Observable<Country[]>;
+    return this.http
+      .get(`${this.BASE_URL}?q=${searchTerm}`, {
+        headers: this.headers,
+      })
+      .pipe(map((response: any) => response.data.objects)) as Observable<
+      Country[]
+    >;
   }
 
   getSearchedCountriesByRegion(searchRegion: string): Observable<Country[]> {
-    return this.http.get(`${this.BASE_URL}region/${searchRegion}`, {
-      headers: this.headers,
-    }) as Observable<Country[]>;
+    return this.http
+      .get(`${this.BASE_URL}/region/${searchRegion}`, {
+        headers: this.headers,
+      })
+      .pipe(map((response: any) => response.data.objects)) as Observable<
+      Country[]
+    >;
   }
 }
