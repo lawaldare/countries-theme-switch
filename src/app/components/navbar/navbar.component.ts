@@ -1,5 +1,5 @@
 import { CountryService } from "./../../services/country.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgClass } from "@angular/common";
 
@@ -7,6 +7,7 @@ import { NgClass } from "@angular/common";
     selector: "app-navbar",
     templateUrl: "./navbar.component.html",
     styleUrls: ["./navbar.component.scss"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgClass]
 })
 export class NavbarComponent implements OnInit {

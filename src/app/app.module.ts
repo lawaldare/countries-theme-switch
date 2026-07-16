@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import {
   provideHttpClient,
   withInterceptorsFromDi,
+  withXhr
 } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 
@@ -34,6 +35,6 @@ import { CurrPipe } from "./curr.pipe";
     LangPipe,
     CurrPipe,
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())],
 })
 export class AppModule {}

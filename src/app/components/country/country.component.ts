@@ -1,6 +1,6 @@
 import { CountryService } from "./../../services/country.service";
 import { Country } from "./../../model/country.model";
-import { Component, input, inject } from "@angular/core";
+import { Component, input, inject, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgClass } from "@angular/common";
 
@@ -8,6 +8,7 @@ import { NgClass } from "@angular/common";
     selector: "app-country",
     templateUrl: "./country.component.html",
     styleUrls: ["./country.component.scss"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgClass]
 })
 export class CountryComponent {

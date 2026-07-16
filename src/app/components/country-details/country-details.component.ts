@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Country } from './../../model/country.model';
 import { CountryService } from './../../services/country.service';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, mergeMap } from 'rxjs/operators';
 import { CurrPipe } from '../../curr.pipe';
@@ -12,6 +12,7 @@ import { NgClass, AsyncPipe } from '@angular/common';
     selector: 'app-country-details',
     templateUrl: './country-details.component.html',
     styleUrls: ['./country-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     NgClass,
     AsyncPipe,

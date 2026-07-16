@@ -1,5 +1,5 @@
 import { CountryService } from './../../services/country.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Country } from 'src/app/model/country.model';
 import { CountryComponent } from '../country/country.component';
@@ -10,6 +10,7 @@ import { NgClass, AsyncPipe } from '@angular/common';
     selector: 'app-country-list',
     templateUrl: './country-list.component.html',
     styleUrls: ['./country-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     NgClass,
     FormsModule,
