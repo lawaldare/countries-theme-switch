@@ -10,14 +10,13 @@ import { NgClass, NgFor, AsyncPipe } from '@angular/common';
     selector: 'app-country-list',
     templateUrl: './country-list.component.html',
     styleUrls: ['./country-list.component.scss'],
-    standalone: true,
     imports: [
         NgClass,
         FormsModule,
         NgFor,
         CountryComponent,
         AsyncPipe,
-    ],
+    ]
 })
 export class CountryListComponent {
   countries$ = this.countryService.getCountries().pipe(

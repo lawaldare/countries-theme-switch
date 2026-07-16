@@ -12,7 +12,6 @@ import { NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
     selector: 'app-country-details',
     templateUrl: './country-details.component.html',
     styleUrls: ['./country-details.component.scss'],
-    standalone: true,
     imports: [
         NgClass,
         NgIf,
@@ -20,7 +19,7 @@ import { NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
         AsyncPipe,
         LangPipe,
         CurrPipe,
-    ],
+    ]
 })
 export class CountryDetailsComponent {
   country$: Observable<Country> = this.route.paramMap.pipe(

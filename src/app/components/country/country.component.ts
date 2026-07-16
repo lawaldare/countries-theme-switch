@@ -5,11 +5,10 @@ import { Router } from "@angular/router";
 import { NgClass } from "@angular/common";
 
 @Component({
-  selector: "app-country",
-  templateUrl: "./country.component.html",
-  styleUrls: ["./country.component.scss"],
-  standalone: true,
-  imports: [NgClass],
+    selector: "app-country",
+    templateUrl: "./country.component.html",
+    styleUrls: ["./country.component.scss"],
+    imports: [NgClass]
 })
 export class CountryComponent {
   public readonly country = input.required<Country>();
