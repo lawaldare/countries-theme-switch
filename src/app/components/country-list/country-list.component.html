@@ -7,14 +7,14 @@
       (input)="getAllSearchedCountries($event)"
       placeholder="Search for a country..."
       [ngClass]="{ 'dark-mode': this.countryService.isDark() }"
-    />
+      />
   </div>
   <div class="region-container shadow">
     <select
       class="region-input-box"
       (change)="getAllSearchedCountriesByRegion($event)"
       [ngClass]="{ 'dark-mode': this.countryService.isDark() }"
-    >
+      >
       <option selected disabled>Filter By Region</option>
       <option value="all">All</option>
       <option value="Asia">Asia</option>
@@ -30,9 +30,10 @@
 <div
   class="country-countainer mt-5"
   [ngClass]="{ 'dark-mode': this.countryService.isDark() }"
->
-  <app-country
-    *ngFor="let country of countries$ | async"
-    [country]="country"
-  ></app-country>
+  >
+  @for (country of countries$ | async; track country) {
+    <app-country
+      [country]="country"
+    ></app-country>
+  }
 </div>

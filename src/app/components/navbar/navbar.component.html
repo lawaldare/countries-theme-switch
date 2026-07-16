@@ -2,11 +2,15 @@
   <div class="container">
     <a class="navbar-brand mode" (click)="goToHomepage()"
       >Where in the world?</a
-    >
-    <p class="mode mt-3" (click)="changeMode()">
-      <i class="fas fa-moon" *ngIf="this.countryService.isDark()"></i>
-      <i class="far fa-moon" *ngIf="!this.countryService.isDark()"></i>&nbsp;
-      Dark Mode
-    </p>
-  </div>
-</nav>
+      >
+      <p class="mode mt-3" (click)="changeMode()">
+        @if (this.countryService.isDark()) {
+          <i class="fas fa-moon"></i>
+        }
+        @if (!this.countryService.isDark()) {
+          <i class="far fa-moon"></i>
+          }&nbsp;
+          Dark Mode
+        </p>
+      </div>
+    </nav>

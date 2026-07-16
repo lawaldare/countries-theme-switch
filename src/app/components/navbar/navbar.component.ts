@@ -1,13 +1,13 @@
 import { CountryService } from "./../../services/country.service";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { NgClass, NgIf } from "@angular/common";
+import { NgClass } from "@angular/common";
 
 @Component({
     selector: "app-navbar",
     templateUrl: "./navbar.component.html",
     styleUrls: ["./navbar.component.scss"],
-    imports: [NgClass, NgIf]
+    imports: [NgClass]
 })
 export class NavbarComponent implements OnInit {
   constructor(public countryService: CountryService, private router: Router) {}

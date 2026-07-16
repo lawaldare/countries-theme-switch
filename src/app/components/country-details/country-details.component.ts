@@ -6,20 +6,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, mergeMap } from 'rxjs/operators';
 import { CurrPipe } from '../../curr.pipe';
 import { LangPipe } from '../../lang.pipe';
-import { NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-country-details',
     templateUrl: './country-details.component.html',
     styleUrls: ['./country-details.component.scss'],
     imports: [
-        NgClass,
-        NgIf,
-        NgFor,
-        AsyncPipe,
-        LangPipe,
-        CurrPipe,
-    ]
+    NgClass,
+    AsyncPipe,
+    LangPipe,
+    CurrPipe
+]
 })
 export class CountryDetailsComponent {
   country$: Observable<Country> = this.route.paramMap.pipe(
