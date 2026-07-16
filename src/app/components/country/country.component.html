@@ -1,14 +1,14 @@
 <div
   class="card shadow"
-  (click)="getCountryDetails(country().name.common)"
+  (click)="getCountryDetails(country().names.common)"
   [ngClass]="{ 'dark-mode': this.countryService.isDark() }"
   data-aos="fade-up"
   data-aos-duration="500"
   data-aos-easing="ease-in-sine"
 >
-  <img [src]="country().flags.svg" alt="" class="flag" />
+  <img [src]="country().flag.url_svg" alt="" class="flag" />
   <div class="list-content">
-    <p class="country-name">{{ country().name.common }}</p>
+    <p class="country-name">{{ country().names.common }}</p>
     <div class="sub-content">
       <p>
         <span class="bold-header">Poulation:</span>
@@ -20,7 +20,9 @@
       </p>
       <p>
         <span class="bold-header">Capital:</span>
-        <span class="bold-header-value"> {{ country().capital }} </span>
+        <span class="bold-header-value">
+          {{ country().capitals[0].name }}
+        </span>
       </p>
     </div>
   </div>
